@@ -28,7 +28,7 @@ const teamMembers = [
     {
         name: "Pedro",
         role: "Graduando/Desenvolvedor",
-        imageSrc: "images/pedro.jpg",
+        imageSrc: "images/pedro.png",
         socialLinks: {
             github: "https://github.com/Pephma",
         },
