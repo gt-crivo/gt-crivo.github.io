@@ -19,6 +19,26 @@ const teamMembers = [
         },
     },
     {
+        name: "Italo",
+        role: "Coordenador",
+        imageSrc: "images/italo.jpg",
+        socialLinks: {
+            github: "https://github.com/cunha",
+            linkedin: "https://www.linkedin.com/in/italocunha/",
+            user: "http://lattes.cnpq.br/7973706384467274"
+        },
+    },
+    {
+        name: "Leonardo",
+        role: "Graduando/Desenvolvedor",
+        imageSrc: "images/leoomaia.jpg",
+        socialLinks: {
+            github: "https://github.com/LeoOMaia",
+            linkedin: "https://www.linkedin.com/in/leonardo-oliveira-maia-5296b5231/",
+            user: "https://lattes.cnpq.br/5269268117024845"
+        },
+    },
+    {
         name: "Lucas",
         role: "Graduando/Desenvolvedor",
         imageSrc: "images/lucas.jpg",
@@ -37,16 +57,6 @@ const teamMembers = [
         },
     },
     {
-        name: "Leonardo",
-        role: "Graduando/Desenvolvedor",
-        imageSrc: "images/leoomaia.jpg",
-        socialLinks: {
-            github: "https://github.com/LeoOMaia",
-            linkedin: "https://www.linkedin.com/in/leonardo-oliveira-maia-5296b5231/",
-            user: "https://lattes.cnpq.br/5269268117024845"
-        },
-    },
-    {
         name: "Thiago",
         role: "Mestrando/Desenvolvedor",
         imageSrc: "images/thiagohbs.webp",
@@ -56,22 +66,12 @@ const teamMembers = [
             user: "http://lattes.cnpq.br/3928778510712888"
         },
     },
-    {
-        name: "Italo",
-        role: "Coordenador",
-        imageSrc: "images/italo.jpg",
-        socialLinks: {
-            github: "https://github.com/cunha",
-            linkedin: "https://www.linkedin.com/in/italocunha/",
-            user: "http://lattes.cnpq.br/7973706384467274"
-        },
-    },
 ];
 
 // Função para criar o elemento do membro da equipe
-function createTeamMemberElement(member, isCoordinator = false) {
+function createTeamMemberElement(member) {
     const container = document.createElement("div");
-    container.className = isCoordinator ? "coordinator-container" : "col-lg-4 col-sm-6";
+    container.className = "col-lg-4 col-sm-6";
 
     const blogImg = document.createElement("div");
     blogImg.className = "blog_img";
@@ -124,21 +124,7 @@ function createTeamMemberElement(member, isCoordinator = false) {
 function addTeamToPage() {
     const blogSection = document.querySelector(".blog_section_2 .row");
 
-    // Encontra o Coordenador e remove da lista original
-    const coordinator = teamMembers.find(member => member.role === "Coordenador");
-    const otherMembers = teamMembers.filter(member => member.role !== "Coordenador");
-
-    // Adiciona o Coordenador ao topo
-    if (coordinator) {
-        const coordinatorElement = createTeamMemberElement(coordinator, true);
-        const coordinatorContainer = document.createElement("div");
-        coordinatorContainer.className = "col-12 text-center"; // Linha inteira
-        coordinatorContainer.appendChild(coordinatorElement);
-        blogSection.appendChild(coordinatorContainer);
-    }
-
-    // Adiciona os demais membros
-    otherMembers.forEach((member) => {
+    teamMembers.forEach((member) => {
         const teamElement = createTeamMemberElement(member);
         blogSection.appendChild(teamElement);
     });
