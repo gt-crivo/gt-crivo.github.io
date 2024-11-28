@@ -594,6 +594,18 @@ button {
     margin: 0px;
 }
 
+.coordinator-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative; /* Para permitir melhor controle */
+}
+
+.coordinator-container .blog_img img {
+    transform: translateX(-35px); /* Move a imagem para a esquerda */
+}
+
 .worker_text {
     width: 100%;
     float: left;

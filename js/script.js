@@ -15,6 +15,7 @@ const teamMembers = [
         imageSrc: "images/pains.jpg",
         socialLinks: {
             github: "https://github.com/probablygab",
+            linkedin: "https://www.linkedin.com/in/gabriel-pains/"
         },
     },
     {
@@ -23,6 +24,7 @@ const teamMembers = [
         imageSrc: "images/lucas.jpg",
         socialLinks: {
             github: "https://github.com/Sacramento-20",
+            linkedin: "https://www.linkedin.com/in/lucas-20-sacramento/"
         },
     },
     {
@@ -31,6 +33,27 @@ const teamMembers = [
         imageSrc: "images/pedro.png",
         socialLinks: {
             github: "https://github.com/Pephma",
+            linkedin: "https://www.linkedin.com/in/pedro-m-952597210/"
+        },
+    },
+    {
+        name: "Leonardo",
+        role: "Graduando/Desenvolvedor",
+        imageSrc: "images/leoomaia.jpg",
+        socialLinks: {
+            github: "https://github.com/LeoOMaia",
+            linkedin: "https://www.linkedin.com/in/leonardo-oliveira-maia-5296b5231/",
+            user: "https://lattes.cnpq.br/5269268117024845"
+        },
+    },
+    {
+        name: "Thiago",
+        role: "Mestrando/Desenvolvedor",
+        imageSrc: "images/thiagohbs.webp",
+        socialLinks: {
+            github: "https://github.com/THnelso",
+            linkedin: "https://www.linkedin.com/in/thiago-souza-6a0934213/",
+            user: "http://lattes.cnpq.br/3928778510712888"
         },
     },
     {
@@ -46,9 +69,9 @@ const teamMembers = [
 ];
 
 // Função para criar o elemento do membro da equipe
-function createTeamMemberElement(member) {
+function createTeamMemberElement(member, isCoordinator = false) {
     const container = document.createElement("div");
-    container.className = "col-lg-4 col-sm-6";
+    container.className = isCoordinator ? "coordinator-container" : "col-lg-4 col-sm-6";
 
     const blogImg = document.createElement("div");
     blogImg.className = "blog_img";
@@ -101,7 +124,21 @@ function createTeamMemberElement(member) {
 function addTeamToPage() {
     const blogSection = document.querySelector(".blog_section_2 .row");
 
-    teamMembers.forEach((member) => {
+    // Encontra o Coordenador e remove da lista original
+    const coordinator = teamMembers.find(member => member.role === "Coordenador");
+    const otherMembers = teamMembers.filter(member => member.role !== "Coordenador");
+
+    // Adiciona o Coordenador ao topo
+    if (coordinator) {
+        const coordinatorElement = createTeamMemberElement(coordinator, true);
+        const coordinatorContainer = document.createElement("div");
+        coordinatorContainer.className = "col-12 text-center"; // Linha inteira
+        coordinatorContainer.appendChild(coordinatorElement);
+        blogSection.appendChild(coordinatorContainer);
+    }
+
+    // Adiciona os demais membros
+    otherMembers.forEach((member) => {
         const teamElement = createTeamMemberElement(member);
         blogSection.appendChild(teamElement);
     });
