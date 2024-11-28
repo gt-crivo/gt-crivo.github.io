@@ -15,22 +15,7 @@ const teamMembers = [
         imageSrc: "images/pains.jpg",
         socialLinks: {
             github: "https://github.com/probablygab",
-        },
-    },
-    {
-        name: "Lucas",
-        role: "Graduando/Desenvolvedor",
-        imageSrc: "images/lucas.jpg",
-        socialLinks: {
-            github: "https://github.com/Sacramento-20",
-        },
-    },
-    {
-        name: "Pedro",
-        role: "Graduando/Desenvolvedor",
-        imageSrc: "images/pedro.png",
-        socialLinks: {
-            github: "https://github.com/Pephma",
+            linkedin: "https://www.linkedin.com/in/gabriel-pains/"
         },
     },
     {
@@ -41,6 +26,44 @@ const teamMembers = [
             github: "https://github.com/cunha",
             linkedin: "https://www.linkedin.com/in/italocunha/",
             user: "http://lattes.cnpq.br/7973706384467274"
+        },
+    },
+    {
+        name: "Leonardo",
+        role: "Graduando/Desenvolvedor",
+        imageSrc: "images/leoomaia.jpg",
+        socialLinks: {
+            github: "https://github.com/LeoOMaia",
+            linkedin: "https://www.linkedin.com/in/leonardo-oliveira-maia-5296b5231/",
+            user: "https://lattes.cnpq.br/5269268117024845"
+        },
+    },
+    {
+        name: "Lucas",
+        role: "Graduando/Desenvolvedor",
+        imageSrc: "images/lucas.jpg",
+        socialLinks: {
+            github: "https://github.com/Sacramento-20",
+            linkedin: "https://www.linkedin.com/in/lucas-20-sacramento/"
+        },
+    },
+    {
+        name: "Pedro",
+        role: "Graduando/Desenvolvedor",
+        imageSrc: "images/pedro.png",
+        socialLinks: {
+            github: "https://github.com/Pephma",
+            linkedin: "https://www.linkedin.com/in/pedro-m-952597210/"
+        },
+    },
+    {
+        name: "Thiago",
+        role: "Mestrando/Desenvolvedor",
+        imageSrc: "images/thiagohbs.webp",
+        socialLinks: {
+            github: "https://github.com/THnelso",
+            linkedin: "https://www.linkedin.com/in/thiago-souza-6a0934213/",
+            user: "http://lattes.cnpq.br/3928778510712888"
         },
     },
 ];
